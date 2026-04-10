@@ -1,0 +1,9 @@
+torch
+torchvision
+numpy
+nibabel
+matplotlib
+streamlit
+reportlab
+scikit-image
+tqdm
