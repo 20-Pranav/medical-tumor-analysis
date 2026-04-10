@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+medical_env/
+
+# Large data files
+*.nii.gz
+*.npz
+*.pth
+*.pdf
+
+# Temporary files
+temp_*
+*.tmp
+
+# IDE
+.vscode/
+.idea/
