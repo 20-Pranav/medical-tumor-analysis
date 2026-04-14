@@ -3,6 +3,7 @@ from reportlab.pdfgen import canvas
 from datetime import datetime
 
 def create_tumor_report(comparison_result, confidence_scores, output_pdf='tumor_report.pdf'):
+    """Generate a PDF clinical report."""
     c = canvas.Canvas(output_pdf, pagesize=letter)
     width, height = letter
     y = height - 50
@@ -26,14 +27,3 @@ def create_tumor_report(comparison_result, confidence_scores, output_pdf='tumor_
     
     c.save()
     print(f"✅ Report saved to {output_pdf}")
-
-if __name__ == "__main__":
-    demo_result = {
-        'old_volume_mm3': 14137.17,
-        'new_volume_mm3': 4188.79,
-        'change_mm3': -9948.38,
-        'percent_change': -70.4,
-        'status': 'Regression'
-    }
-    demo_conf = {'mean': 0.85}
-    create_tumor_report(demo_result, demo_conf, 'demo_report.pdf')

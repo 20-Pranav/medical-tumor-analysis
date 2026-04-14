@@ -61,7 +61,6 @@ class UNet3D(nn.Module):
         self.out_conv = nn.Conv3d(init_features, out_channels, kernel_size=1)
 
     def forward(self, x):
-        # x shape: (B, C, D, H, W)
         f1, p1 = self.enc1(x)
         f2, p2 = self.enc2(p1)
         f3, p3 = self.enc3(p2)
@@ -73,3 +72,4 @@ class UNet3D(nn.Module):
         d1 = self.dec1(d2, f1)
         out = torch.sigmoid(self.out_conv(d1))
         return out
+
